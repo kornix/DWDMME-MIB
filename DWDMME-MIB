@@ -69,6 +69,183 @@ sysContact		OBJECT-TYPE
 
 --}}}
 
+system		OBJECT IDENTIFIER	::= { hardware 2 }
+
+--{{{
+
+system ::= SEQUENCE {
+	sysConfiguration	DisplayString,
+	sysSlotM		DisplayString,
+	sysSlot1		DisplayString,
+	sysSlot2		DisplayString,
+	sysSlot3		DisplayString,
+	sysSlot4		DisplayString,
+	sysSlot5		DisplayString,
+	sysSlot6		DisplayString,
+	sysSlot7		DisplayString,
+	sysSlot8		DisplayString,
+	sysSlot9		DisplayString,
+	sysSlot10		DisplayString,
+	sysSlot11		DisplayString,
+	sysSlot12		DisplayString,
+	sysSlot13		DisplayString,
+	sysSlot14		DisplayString,
+	sysSlot15		DisplayString,
+	sysSlot16		DisplayString,
+	sysSlot17		DisplayString,
+	sysSlot18		DisplayString,
+	sysSlot19		DisplayString
+}
+
+sysConfiguration	OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"System overall configuration"
+			::= { system 1 }
+
+sysSlotM		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS slot configuration and state"
+			::= { system 2 }
+
+sysSlot1		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 1 configuration and state"
+			::= { system 3 }
+
+sysSlot2		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 2 configuration and state"
+			::= { system 4 }
+
+sysSlot3		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 3 configuration and state"
+			::= { system 5 }
+
+sysSlot4		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 4 configuration and state"
+			::= { system 6 }
+
+sysSlot5		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 5 configuration and state"
+			::= { system 7 }
+
+sysSlot6		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 6 configuration and state"
+			::= { system 8 }
+
+sysSlot7		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 7 configuration and state"
+			::= { system 9 }
+
+sysSlot8		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 8 configuration and state"
+			::= { system 10 }
+
+sysSlot9		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 9 configuration and state"
+			::= { system 11 }
+
+sysSlot10		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 10 configuration and state"
+			::= { system 12 }
+
+sysSlot11		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 11 configuration and state"
+			::= { system 13 }
+
+sysSlot12		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 12 configuration and state"
+			::= { system 14 }
+
+sysSlot13		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 13 configuration and state"
+			::= { system 15 }
+
+sysSlot14		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 14 configuration and state"
+			::= { system 16 }
+
+sysSlot15		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 15 configuration and state"
+			::= { system 17 }
+
+sysSlot16		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 16 configuration and state"
+			::= { system 18 }
+
+sysSlot17		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 17 configuration and state"
+			::= { system 19 }
+
+sysSlot18		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 18 configuration and state"
+			::= { system 20 }
+
+sysSlot19		OBJECT-TYPE
+			SYNTAX			DisplayString (SIZE(0..255))
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"Slot 19 configuration and state"
+			::= { system 21 }
+
+--}}}
+
 nms		OBJECT IDENTIFIER	::= { hardware 3 }
 linecard	OBJECT IDENTIFIER	::= { hardware 4 }
 
