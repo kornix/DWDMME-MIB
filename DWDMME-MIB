@@ -1,0 +1,385 @@
+-- ******************************************************************
+-- DWDMME-MIB: DWDM.ME Enterprise Structure of Management Information
+--
+-- July 2024
+-- 
+-- Written by: Volodymyr Pidgornyi <vp@dtel-ix.net>
+-- 
+-- v0.0.0 - Initial MIB file release
+-- ******************************************************************
+
+DWDMME DEFINITIONS ::= BEGIN
+
+--{{{
+
+IMPORTS
+	Counter32, Gauge32, Counter64, Integer32, TimeTicks, enterprises
+				FROM SNMPv2-SMI
+	sysName, sysLocation, sysContact
+				FROM SNMPv2-MIB
+	OBJECT-TYPE		FROM RFC-1212;
+
+dwdmme	MODULE-IDENTITY
+	LAST-UPDATED		"202407190000Z"
+	ORGANIZATION		"DWDM.ME Ltd."
+	CONTACT-INFO		"Akadeemia tee 45, 12618 Tallinn, ESTONIA"
+	DESCRIPTION		"The MIB module to describe DWDM.ME MU Series Data Transmission Platform parameters"
+	REVISION		"202407190000Z"
+	DESCRIPTION		"v0.0.0 - Initial release"
+	::= { enterprises 83667 }
+
+dwdmme		OBJECT IDENTIFIER	::= { enterprises 83667 }
+
+products	OBJECT IDENTIFIER	::= { dwdmme 1 }
+
+hardware	OBJECT IDENTIFIER	::= { products 1 }
+
+--}}}
+
+chassis		OBJECT IDENTIFIER	::= { hardware 1 }
+
+--{{{
+
+chassis	::= SEQUENCE {
+	sysName			DisplayString,
+	sysLocation		DisplayString,
+	sysContact		DisplayString
+}
+
+sysName			OBJECT-TYPE
+			SYNTAX			DisplayString
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"System Name"
+			::= { chassis 1 }
+
+sysLocation		OBJECT-TYPE
+			SYNTAX			DisplayString
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"System Location"
+			::= { chassis 2 }
+
+sysContact		OBJECT-TYPE
+			SYNTAX			DisplayString
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"System Contact"
+			::= { chassis 3 }
+
+--}}}
+
+nms		OBJECT IDENTIFIER	::= { hardware 3 }
+linecard	OBJECT IDENTIFIER	::= { hardware 4 }
+
+nmsUnit		OBJECT IDENTIFIER	::= { nms 2 }
+
+--{{{
+
+nmsUnit	::= SEQUENCE {
+	nmsType			DisplayString,
+	nmsSoftwareVersion	DisplayString,
+	nmsDescription		DisplayString,
+	lan1Link		Integer32,
+	lan1Speed		Integer32,
+	lan2Link		Integer32,
+	lan2Speed		Integer32,
+	lan3Link		Integer32,
+	lan3Speed		Integer32,
+	lan4Link		Integer32,
+	lan4Speed		Integer32,
+	sfp1Status		Integer32,
+	sfp1Link		Integer32,
+	sfp1Speed		Integer32,
+	sfp1Wavelength		Integer32,
+	sfp1FiberMode		Integer32,
+	sfp1TransDistance	Integer32,
+	sfp1Temperature		Integer32,
+	sfp1Voltage		Integer32,
+	sfp1Current		Integer32,
+	sfp1RxPower		Integer32,
+	sfp1TxPower		Integer32,
+	sfp2Status		Integer32,
+	sfp2Link		Integer32,
+	sfp2Speed		Integer32,
+	sfp2Wavelength		Integer32,
+	sfp2FiberMode		Integer32,
+	sfp2TransDistance	Integer32,
+	sfp2Temperature		Integer32,
+	sfp2Voltage		Integer32,
+	sfp2Current		Integer32,
+	sfp2RxPower		Integer32,
+	sfp2TxPower		Integer32,
+	power1Type		DisplayString,
+	power1Status		Integer32,
+	power2Type		DisplayString,
+	power2Status		Integer32,
+}
+
+nmsType			OBJECT-TYPE
+			SYNTAX			DisplayString
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card Type"
+			::= { nmsUnit 1 }
+
+nmsSoftwareVersion	OBJECT-TYPE
+			SYNTAX			DisplayString
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card Software Version"
+			::= { nmsUnit 2 }
+
+nmsDescription		OBJECT-TYPE
+			SYNTAX			DisplayString
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card Description"
+			::= { nmsUnit 3 }
+
+lan1Link		OBJECT-TYPE
+			SYNTAX			Integer32
+			{ notLinked(0), up(1), down(2), testing(3), unknown(4), dormant(5), notPresent(6), lowerLayerDown(7) }
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card LAN1 Link Status"
+			::= { nmsUnit 4 }
+
+lan1Speed		OBJECT-TYPE
+			SYNTAX			Integer32 (0..10000)
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card LAN1 Link Speed"
+			::= { nmsUnit 5 }
+
+lan2Link		OBJECT-TYPE
+			SYNTAX			Integer32
+			{ notLinked(0), up(1), down(2), testing(3), unknown(4), dormant(5), notPresent(6), lowerLayerDown(7) }
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card LAN2 Link Status"
+			::= { nmsUnit 6 }
+
+lan2Speed		OBJECT-TYPE
+			SYNTAX			Integer32 (0..10000)
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card LAN2 Link Speed"
+			::= { nmsUnit 7 }
+
+lan3Link		OBJECT-TYPE
+			SYNTAX			Integer32
+			{ notLinked(0), up(1), down(2), testing(3), unknown(4), dormant(5), notPresent(6), lowerLayerDown(7) }
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card LAN3 Link Status"
+			::= { nmsUnit 8 }
+
+lan3Speed		OBJECT-TYPE
+			SYNTAX			Integer32 (0..10000)
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card LAN3 Link Speed"
+			::= { nmsUnit 9 }
+
+lan4Link		OBJECT-TYPE
+			SYNTAX			Integer32
+			{ notLinked(0), up(1), down(2), testing(3), unknown(4), dormant(5), notPresent(6), lowerLayerDown(7) }
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card LAN4 Link Status"
+			::= { nmsUnit 10 }
+
+lan4Speed		OBJECT-TYPE
+			SYNTAX			Integer32 (0..10000)
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card LAN4 Link Speed"
+			::= { nmsUnit 11 }
+
+sfp1Status		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP1 Status"
+			::= { nmsUnit 12 }
+
+sfp1Link		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP1 Link"
+			::= { nmsUnit 13 }
+
+sfp1Speed		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP1 Speed"
+			::= { nmsUnit 14 }
+
+sfp1Wavelength		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP1 Wavelength"
+			::= { nmsUnit 15 }
+
+sfp1Fibermode		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP1 Fiber Mode"
+			::= { nmsUnit 16 }
+
+sfp1TransDistance	OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP1 Transceiver Distance"
+			::= { nmsUnit 17 }
+
+sfp1Temperature		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP1 Temperature"
+			::= { nmsUnit 18 }
+
+sfp1Voltage		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP1 Voltage"
+			::= { nmsUnit 19 }
+
+sfp1Current		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP1 Current"
+			::= { nmsUnit 20 }
+
+sfp1RxPower		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP1 RX Power"
+			::= { nmsUnit 21 }
+
+sfp1TxPower		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP1 TX Power"
+			::= { nmsUnit 22 }
+
+sfp2Status		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP2 Status"
+			::= { nmsUnit 23 }
+
+sfp2Link		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP2 Link"
+			::= { nmsUnit 24 }
+
+sfp2Speed		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP2 Speed"
+			::= { nmsUnit 25 }
+
+sfp2Wavelength		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP2 Wavelength"
+			::= { nmsUnit 26 }
+
+sfp2Fibermode		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP2 Fiber Mode"
+			::= { nmsUnit 27 }
+
+sfp2TransDistance	OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP2 Transceiver Distance"
+			::= { nmsUnit 28 }
+
+sfp2Temperature		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP2 Temperature"
+			::= { nmsUnit 29 }
+
+sfp2Voltage		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP2 Voltage"
+			::= { nmsUnit 30 }
+
+sfp2Current		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP2 Current"
+			::= { nmsUnit 31 }
+
+sfp2RxPower		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP2 RX Power"
+			::= { nmsUnit 32 }
+
+sfp2TxPower		OBJECT-TYPE
+			SYNTAX			Integer32
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"NMS Card SFP2 TX Power"
+			::= { nmsUnit 33 }
+
+power1Type		OBJECT-TYPE
+			SYNTAX			DisplayString
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"PSU1 Type"
+			::= { nmsUnit 34 }
+
+power1Status		OBJECT-TYPE
+			SYNTAX			Integer32 { up(1), down(2) }
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"PSU1 Status"
+			::= { nmsUnit 35 }
+
+power2Type		OBJECT-TYPE
+			SYNTAX			DisplayString
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"PSU2 Type"
+			::= { nmsUnit 36 }
+
+power2Status		OBJECT-TYPE
+			SYNTAX			Integer32 { up(1), down(2) }
+			MAX-ACCESS		read-only
+			STATUS			current
+			DESCRIPTION		"PSU2 Status"
+			::= { nmsUnit 37 }
+
+--}}}
+
+END
+
