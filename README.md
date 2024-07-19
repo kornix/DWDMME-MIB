@@ -8,7 +8,7 @@
 * This MIB file **WAS NOT CHECKED** either by vendor, nor by vendor's representatives. At all.
 * This means there **ARE** inaccuracies, omissions and errors. Anyway, it looks much better, then without this file.
 
-**So use it on your own risk and don't complain - i've warned you!**
+**So use it on your own risk and don't complain - you've been warned!**
 
 ### EXAMPLES
 * snmpwalk -M +mibs/dwdm.me -v2c -c XXX X.X.X.X DWDMME::products
