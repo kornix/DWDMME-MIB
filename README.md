@@ -25,7 +25,7 @@ DWDMME::sysContact.0 = STRING: "noc@nowhere.no"
 ```
 DWDMME::nmsType.0 = STRING: "NMS"
 DWDMME::nmsSoftwareVersion.0 = STRING: "5.60"
-DWDMME::nmsDescription.0 = STRING: "DWDM Chassis :: NewTelco 1.1"
+DWDMME::nmsDescription.0 = STRING: "DWDM Chassis :: Nowhere.NO"
 DWDMME::lan1Link.0 = INTEGER: up(1)
 DWDMME::lan1Speed.0 = INTEGER: 100
 DWDMME::lan2Link.0 = INTEGER: notLinked(0)
