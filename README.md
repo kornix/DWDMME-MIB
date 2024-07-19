@@ -20,7 +20,8 @@ DWDMME::sysContact.0 = STRING: "noc@nowhere.no"
 ...
 ```
 * snmpwalk -M +mibs/dwdm.me -v2c -c XXX X.X.X.X DWDMME::nmsUnit
-Don't ask me why vendor placed PSU information to NMS unit subtree, just live with this knowledge.
+
+```Don't ask me why vendor placed PSU information to NMS unit subtree, just live with this knowledge.```
 ```
 DWDMME::nmsType.0 = STRING: "NMS"
 DWDMME::nmsSoftwareVersion.0 = STRING: "5.60"
