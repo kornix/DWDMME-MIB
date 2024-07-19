@@ -8,7 +8,7 @@
 * This MIB file **WAS NOT CHECKED** either by vendor, nor by vendor's representatives. At all.
 * This means there **ARE** inaccuracies, omissions and errors. Anyway, it looks much better, then without this file.
 
-**So use it on your own risk and don't complain - you've been warned!**
+**So shut up, grab it for free, use it on your own risk and don't complain - you've been warned!**
 
 ### EXAMPLES
 * snmpwalk -M +mibs/dwdm.me -v2c -c XXX X.X.X.X DWDMME::products
@@ -21,7 +21,7 @@ DWDMME::sysContact.0 = STRING: "noc@nowhere.no"
 ```
 * snmpwalk -M +mibs/dwdm.me -v2c -c XXX X.X.X.X DWDMME::nmsUnit
 
-```Don't ask me why vendor placed PSU information to NMS unit subtree, just live with this knowledge.```
+```Don't ask me why vendor placed PSU information in the NMS unit subtree - it looks as weird to me as it is to you, just live with this knowledge.```
 ```
 DWDMME::nmsType.0 = STRING: "NMS"
 DWDMME::nmsSoftwareVersion.0 = STRING: "5.60"
